@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8  />
+<title></title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+</head>
+<body>
+<div id="map" style="position:absolute;width: 500px;height: 400px"></div><br><br><br>
+<div style="position:absolute;top:450px;background:#eeeeee;width:800px;margin-left:5px;">
+<p2><em> Download plain text version of source code by clicking:<a href="file:///C:/Users/user/Desktop/c.html">News</a></em></p>
+<p2 style='color:red;font-family:Arial Bold;'> Explanation </p2><br><br>
+<p2 style='font-family:Helvitica;'> An example of a geojson file text is: <br><br> 
+
+<strong>var geojson = [{
+"type":"Feature",         //Defines each feature of the layer<br>
+"properties":{            //Defines the attributes of the feature<br>
+"Longitude":"-0.1969",<br>
+"Latitude":"5.55602",<br>
+"city":"Accra",<br>
+"country":"Ghana",<br>
+"city_popul":"1605400"},<br>
+"geometry":{               //Defines the geometry of the feature whether point, line or area<br>
+"type":"Point",<br>
+"coordinates":[-0.1969,5.55602]   //defines the geographic coordinates of the feature<br>
+
+}}];</strong></p><br>
+
+
+<p2> We use the L.geoJson function to draw the layer on the base map<br><br><strong> L.geoJson(geojson).addTo(map);</strong></p>
+</div>
+
+<script>
+  
+ var geojson = [{"type":"Feature","properties":{"Longitude":"-0.1969","Latitude":"5.55602","city":"Accra","country":"Ghana","city_popul":"1605400","urban_area":"2756100","urbanrank_":"14","cityrank_a":"22"},"geometry":{"type":"Point","coordinates":[-0.1969,5.55602]}},{"type":"Feature","properties":{"Longitude":"38.74689","Latitude":"9.02497","city":"Addis Ababa","country":"Ethiopia","city_popul":"2638500","urban_area":"2638500","urbanrank_":"16","cityrank_a":"10"},"geometry":{"type":"Point","coordinates":[38.74689,9.02497]}},{"type":"Feature","properties":{"Longitude":"29.95527","Latitude":"31.21564","city":"Alexandria","country":"Egypt","city_popul":"3806300","urban_area":"4345800","urbanrank_":"6","cityrank_a":"4"},"geometry":{"type":"Point","coordinates":[29.95527,31.21564]}},{"type":"Feature","properties":{"Longitude":"3.04197","Latitude":"36.7525","city":"Algiers","country":"Algeria","city_popul":"1696000","urban_area":"3815900","urbanrank_":"8","cityrank_a":"19"},
+"geometry":{"type":"Point","coordinates":[3.04197,36.7525]}}];
+
+
+L.mapbox.accessToken = 'pk.eyJ1IjoibWF5b3R1bmRlIiwiYSI6IlpFM1Jmck0ifQ.13TB14FKWB328q1q7eEZUQ';
+var map = L.mapbox.map('map', 'mapbox.streets').setView([4.6, 2.8], 5);
+
+
+L.geoJson(geojson).addTo(map);
+
+</script>
+
+</body>
+</html>
+
